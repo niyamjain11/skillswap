@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Skill Swap Help Center</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#13daec",
+              "background-light": "#f6f8f8",
+              "background-dark": "#102022",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d1a1b] dark:text-white min-h-screen flex flex-col font-display">
+<!-- Top Navigation Bar -->
+<header class="w-full border-b border-solid border-[#e7f2f3] dark:border-[#1e3a3d] bg-white dark:bg-background-dark px-4 md:px-10 lg:px-40 py-3 sticky top-0 z-50">
+<div class="flex items-center justify-between max-w-[1200px] mx-auto">
+<div class="flex items-center gap-4 text-[#0d1a1b] dark:text-white">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined text-3xl">swap_calls</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Skill Swap</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<nav class="flex items-center gap-9">
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Browse Skills</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">How it Works</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Community</a>
+</nav>
+<div class="flex gap-2">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-xl h-10 px-4 bg-primary text-[#0d1a1b] text-sm font-bold leading-normal">
+<span>Sign Up</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-xl h-10 px-4 bg-[#e7f2f3] dark:bg-white/10 text-[#0d1a1b] dark:text-white text-sm font-bold leading-normal">
+<span>Log In</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<section class="w-full bg-gradient-to-b from-[#13daec]/20 to-transparent py-12 md:py-20">
+<div class="max-w-[960px] mx-auto px-4 text-center">
+<h1 class="text-[#0d1a1b] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl mb-4">
+                    Help Center
+                </h1>
+<p class="text-[#4c939a] dark:text-primary/70 text-base md:text-lg mb-8 max-w-lg mx-auto">
+                    How can we help you learn today? Search our knowledge base or browse by category.
+                </p>
+<div class="max-w-[600px] mx-auto">
+<div class="flex w-full items-stretch rounded-xl h-14 md:h-16 shadow-lg bg-white dark:bg-background-dark overflow-hidden border border-[#cfe5e7] dark:border-[#1e3a3d]">
+<div class="flex items-center justify-center pl-5 text-[#4c939a]">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-[#0d1a1b] dark:text-white text-sm md:text-base px-4" placeholder="Search for articles, topics, or keywords..."/>
+<div class="flex items-center pr-2">
+<button class="bg-primary text-[#0d1a1b] px-6 h-10 md:h-12 rounded-lg font-bold text-sm md:text-base hover:bg-opacity-90 transition-all">
+                                Search
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Grid Section -->
+<section class="max-w-[1200px] mx-auto px-4 md:px-10 lg:px-40 py-12">
+<h2 class="text-[#0d1a1b] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-8">Browse by Category</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Getting Started -->
+<div class="group flex flex-col gap-4 p-6 rounded-xl border border-[#cfe5e7] dark:border-[#1e3a3d] bg-white dark:bg-white/5 hover:border-primary/50 transition-all hover:shadow-md cursor-pointer">
+<div class="text-primary w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">rocket_launch</span>
+</div>
+<div>
+<h3 class="text-[#0d1a1b] dark:text-white text-lg font-bold mb-1">Getting Started</h3>
+<p class="text-[#4c939a] dark:text-primary/60 text-sm leading-normal">Learn the basics of Skill Swap and set up your first session.</p>
+</div>
+</div>
+<!-- Skill Swapping -->
+<div class="group flex flex-col gap-4 p-6 rounded-xl border border-[#cfe5e7] dark:border-[#1e3a3d] bg-white dark:bg-white/5 hover:border-primary/50 transition-all hover:shadow-md cursor-pointer">
+<div class="text-primary w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">sync_alt</span>
+</div>
+<div>
+<h3 class="text-[#0d1a1b] dark:text-white text-lg font-bold mb-1">Skill Swapping</h3>
+<p class="text-[#4c939a] dark:text-primary/60 text-sm leading-normal">How to exchange skills, manage time, and teach effectively.</p>
+</div>
+</div>
+<!-- Profile & Account -->
+<div class="group flex flex-col gap-4 p-6 rounded-xl border border-[#cfe5e7] dark:border-[#1e3a3d] bg-white dark:bg-white/5 hover:border-primary/50 transition-all hover:shadow-md cursor-pointer">
+<div class="text-primary w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">account_circle</span>
+</div>
+<div>
+<h3 class="text-[#0d1a1b] dark:text-white text-lg font-bold mb-1">Profile &amp; Account</h3>
+<p class="text-[#4c939a] dark:text-primary/60 text-sm leading-normal">Manage your personal information, privacy, and notifications.</p>
+</div>
+</div>
+<!-- Trust & Safety -->
+<div class="group flex flex-col gap-4 p-6 rounded-xl border border-[#cfe5e7] dark:border-[#1e3a3d] bg-white dark:bg-white/5 hover:border-primary/50 transition-all hover:shadow-md cursor-pointer">
+<div class="text-primary w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<div>
+<h3 class="text-[#0d1a1b] dark:text-white text-lg font-bold mb-1">Trust &amp; Safety</h3>
+<p class="text-[#4c939a] dark:text-primary/60 text-sm leading-normal">Reporting issues and staying safe within our growing community.</p>
+</div>
+</div>
+<!-- Payments & Credits -->
+<div class="group flex flex-col gap-4 p-6 rounded-xl border border-[#cfe5e7] dark:border-[#1e3a3d] bg-white dark:bg-white/5 hover:border-primary/50 transition-all hover:shadow-md cursor-pointer">
+<div class="text-primary w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">account_balance_wallet</span>
+</div>
+<div>
+<h3 class="text-[#0d1a1b] dark:text-white text-lg font-bold mb-1">Payments &amp; Credits</h3>
+<p class="text-[#4c939a] dark:text-primary/60 text-sm leading-normal">Understanding how credits work and managing billing info.</p>
+</div>
+</div>
+<!-- Community Guidelines -->
+<div class="group flex flex-col gap-4 p-6 rounded-xl border border-[#cfe5e7] dark:border-[#1e3a3d] bg-white dark:bg-white/5 hover:border-primary/50 transition-all hover:shadow-md cursor-pointer">
+<div class="text-primary w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">auto_stories</span>
+</div>
+<div>
+<h3 class="text-[#0d1a1b] dark:text-white text-lg font-bold mb-1">Community Guidelines</h3>
+<p class="text-[#4c939a] dark:text-primary/60 text-sm leading-normal">Our values and rules for a healthy, collaborative community.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="max-w-[1200px] mx-auto px-4 md:px-10 lg:px-40 py-12">
+<h2 class="text-[#0d1a1b] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-8">Frequently Asked Questions</h2>
+<div class="flex flex-col gap-4">
+<!-- FAQ Item 1 -->
+<details class="group bg-white dark:bg-white/5 border border-[#cfe5e7] dark:border-[#1e3a3d] rounded-lg overflow-hidden">
+<summary class="flex justify-between items-center p-5 cursor-pointer font-bold text-[#0d1a1b] dark:text-white list-none">
+                        How do I book a session with a skill partner?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-5 text-[#4c939a] dark:text-primary/60 text-sm leading-relaxed border-t border-[#cfe5e7] dark:border-[#1e3a3d] pt-4">
+                        To book a session, browse our skill categories or search for a specific talent. Once you find a partner, click on their profile and select "Request Swap". Choose a time from their available slots and send a short message about what you'd like to learn.
+                    </div>
+</details>
+<!-- FAQ Item 2 -->
+<details class="group bg-white dark:bg-white/5 border border-[#cfe5e7] dark:border-[#1e3a3d] rounded-lg overflow-hidden">
+<summary class="flex justify-between items-center p-5 cursor-pointer font-bold text-[#0d1a1b] dark:text-white list-none">
+                        What if a user doesn't show up to our scheduled meeting?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-5 text-[#4c939a] dark:text-primary/60 text-sm leading-relaxed border-t border-[#cfe5e7] dark:border-[#1e3a3d] pt-4">
+                        If a user misses a session without 24-hour notice, you can report a "No-Show" via the session history page. We value everyone's time, and repeated no-shows may lead to account suspension. Credits are usually refunded automatically in these cases.
+                    </div>
+</details>
+<!-- FAQ Item 3 -->
+<details class="group bg-white dark:bg-white/5 border border-[#cfe5e7] dark:border-[#1e3a3d] rounded-lg overflow-hidden">
+<summary class="flex justify-between items-center p-5 cursor-pointer font-bold text-[#0d1a1b] dark:text-white list-none">
+                        Is skill swapping completely free?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-5 text-[#4c939a] dark:text-primary/60 text-sm leading-relaxed border-t border-[#cfe5e7] dark:border-[#1e3a3d] pt-4">
+                        Skill Swap operates on a credit system. You earn credits by teaching others, which you can then use to learn from others. While the exchange of knowledge is free of monetary cost, we offer a premium tier for those who want extra credits without teaching or advanced matchmaking features.
+                    </div>
+</details>
+<!-- FAQ Item 4 -->
+<details class="group bg-white dark:bg-white/5 border border-[#cfe5e7] dark:border-[#1e3a3d] rounded-lg overflow-hidden">
+<summary class="flex justify-between items-center p-5 cursor-pointer font-bold text-[#0d1a1b] dark:text-white list-none">
+                        Can I teach multiple skills?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-5 text-[#4c939a] dark:text-primary/60 text-sm leading-relaxed border-t border-[#cfe5e7] dark:border-[#1e3a3d] pt-4">
+                        Absolutely! You can list as many skills as you are comfortable teaching. Simply add them to your profile and specify your expertise level for each.
+                    </div>
+</details>
+</div>
+</section>
+<!-- Still Need Help Section -->
+<section class="max-w-[1200px] mx-auto px-4 md:px-10 lg:px-40 py-20">
+<div class="bg-primary/5 dark:bg-primary/10 rounded-2xl p-8 md:p-12 text-center border border-primary/20">
+<h2 class="text-[#0d1a1b] dark:text-white text-2xl font-black mb-4">Still need help?</h2>
+<p class="text-[#4c939a] dark:text-primary/70 mb-8 max-w-md mx-auto">
+                    If you couldn't find the answer you're looking for, our friendly support team is here to help you.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-primary text-[#0d1a1b] text-base font-bold transition-transform hover:scale-105">
+<span>Contact Support</span>
+</button>
+<div class="flex gap-8">
+<a class="text-sm font-bold text-primary hover:underline flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-lg">mail</span>
+                            Email Us
+                        </a>
+<a class="text-sm font-bold text-primary hover:underline flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-lg">chat</span>
+                            Live Chat
+                        </a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Simple Footer -->
+<footer class="w-full border-t border-[#e7f2f3] dark:border-[#1e3a3d] py-10 px-4">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 text-[#4c939a]">
+<span class="material-symbols-outlined">swap_calls</span>
+<span class="text-sm font-medium">© 2024 Skill Swap Inc. All rights reserved.</span>
+</div>
+<div class="flex gap-6 text-[#4c939a] text-sm">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Status</a>
+</div>
+</div>
+</footer>
+</body></html>
