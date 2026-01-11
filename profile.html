@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Skill Profile Dashboard - SkillSwap</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .skill-badge-teach {
+            background-color: rgba(19, 127, 236, 0.1);
+            color: #137fec;
+            border: 1px solid rgba(19, 127, 236, 0.2);
+        }
+        .skill-badge-learn {
+            background-color: rgba(34, 197, 94, 0.1);
+            color: #15803d;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d141b] dark:text-slate-100 min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-white dark:bg-[#1a2634] border-b border-[#e7edf3] dark:border-slate-700 px-4 lg:px-20 py-3">
+<div class="max-w-[1280px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight">SkillSwap</h2>
+</div>
+<div class="hidden md:flex items-center bg-[#e7edf3] dark:bg-slate-800 rounded-lg px-3 py-1.5 w-64">
+<span class="material-symbols-outlined text-[#4c739a] text-xl">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-[#4c739a]" placeholder="Search skills or mentors..." type="text"/>
+</div>
+</div>
+<nav class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Discover</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">My Sessions</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Messages</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Community</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-lg bg-[#e7edf3] dark:bg-slate-800 text-[#0d141b] dark:text-slate-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="size-10 rounded-full bg-cover bg-center border-2 border-primary" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDjxwN35VAIdss_FsTW2OuHxxfascpFezrFiRwXTd2JinGAu5UXhTAtlwa5z0DTlkUDLXragUMEmHx2qaJPUYQvLXhG6Z1Zkuc8i2_e2Mp1jl7cgxR-E4Bu5Awj6v1iTGARTr8CiH8Zeba-dKzHnFK230eEJTMranXpCI3kgFQQMfwPrYRlE7p5kNiZe2mSBMlNbAH0jgZeYIpu6D7MrrEfQGpU0UcMxwb7YBaDBMUxzGpKo5NlYFUuH_31GgrsHz8u3VBEwwovKoU7");'></div>
+</div>
+</nav>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-4 lg:px-20 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Sidebar Navigation & Profile Summary -->
+<aside class="lg:col-span-3 flex flex-col gap-6">
+<!-- Profile Card -->
+<div class="bg-white dark:bg-[#1a2634] rounded-xl p-6 shadow-sm border border-[#e7edf3] dark:border-slate-700">
+<div class="flex flex-col items-center text-center">
+<div class="size-32 rounded-full bg-cover bg-center mb-4 ring-4 ring-primary/10" data-alt="Alex Johnson professional profile photo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBDEr27pMNh6NYRNv7d3nVeBc2xxQzPU42ntrSHs6RsiENY0M1ky1wThD2IbuVZO7JmzI0KuNn4fggzXqkghcm88-L3E4i4ENnQW7u-hRaE_nUEvxbwkB-p9dgpiXHH279YQbcxLKLqmohIoa5Up4uSipIpNkSJaGs2A8hxKkZF5ISk_N5sW2i_LMzMcKCYhVzcZv_aohJiPPu2jTTalUxLMLEXWEyd39cg_bTYO1why9TpddCHldp3cRXZopP22O-b-cSNDPXhU8yB");'></div>
+<h1 class="text-xl font-bold">Alex Johnson, 28</h1>
+<p class="text-[#4c739a] text-sm mb-2">Senior Product Designer</p>
+<div class="flex items-center gap-2 text-primary text-xs font-semibold mb-6">
+<span class="material-symbols-outlined text-sm">link</span>
+<span>LinkedIn Connected</span>
+</div>
+<div class="w-full flex gap-2 mb-6">
+<button class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-bold">Message</button>
+<button class="p-2 bg-[#e7edf3] dark:bg-slate-800 rounded-lg text-[#0d141b] dark:text-slate-200">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Gamification Section -->
+<div class="border-t border-[#e7edf3] dark:border-slate-700 pt-6">
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-bold">Level 12 Mentor</span>
+<span class="text-xs font-medium text-primary">75%</span>
+</div>
+<div class="w-full h-2 bg-[#cfdbe7] dark:bg-slate-800 rounded-full mb-2">
+<div class="h-full bg-primary rounded-full" style="width: 75%;"></div>
+</div>
+<p class="text-[11px] text-[#4c739a] mb-6">1,250 / 2,000 XP to Level 13</p>
+<p class="text-xs font-bold uppercase tracking-wider text-[#4c739a] mb-4">Achievements</p>
+<div class="grid grid-cols-3 gap-3">
+<div class="flex flex-col items-center gap-1 group">
+<div class="size-12 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined">school</span>
+</div>
+<span class="text-[10px] text-center font-medium">Mentor</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="size-12 rounded-full bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-orange-600">
+<span class="material-symbols-outlined">star</span>
+</div>
+<span class="text-[10px] text-center font-medium">Top Contributor</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="size-12 rounded-full bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<span class="text-[10px] text-center font-medium">Expert</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary font-semibold text-sm" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+                        Overview
+                    </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#4c739a] hover:bg-[#e7edf3] dark:hover:bg-slate-800 transition-colors text-sm" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+                        My Skills
+                    </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#4c739a] hover:bg-[#e7edf3] dark:hover:bg-slate-800 transition-colors text-sm" href="#">
+<span class="material-symbols-outlined">reviews</span>
+                        Reviews
+                    </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#4c739a] hover:bg-[#e7edf3] dark:hover:bg-slate-800 transition-colors text-sm" href="#">
+<span class="material-symbols-outlined">settings</span>
+                        Settings
+                    </a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<div class="lg:col-span-9 flex flex-col gap-6">
+<!-- Stats Row -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-white dark:bg-[#1a2634] p-5 rounded-xl shadow-sm border border-[#e7edf3] dark:border-slate-700">
+<p class="text-[#4c739a] text-xs font-medium uppercase mb-1">Hours Taught</p>
+<h3 class="text-2xl font-bold">104h</h3>
+</div>
+<div class="bg-white dark:bg-[#1a2634] p-5 rounded-xl shadow-sm border border-[#e7edf3] dark:border-slate-700">
+<p class="text-[#4c739a] text-xs font-medium uppercase mb-1">Hours Learned</p>
+<h3 class="text-2xl font-bold">42h</h3>
+</div>
+<div class="bg-white dark:bg-[#1a2634] p-5 rounded-xl shadow-sm border border-[#e7edf3] dark:border-slate-700">
+<p class="text-[#4c739a] text-xs font-medium uppercase mb-1">Avg. Rating</p>
+<div class="flex items-center gap-1">
+<h3 class="text-2xl font-bold">4.9</h3>
+<span class="material-symbols-outlined text-yellow-500 fill-yellow-500 text-lg">star</span>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a2634] p-5 rounded-xl shadow-sm border border-[#e7edf3] dark:border-slate-700">
+<p class="text-[#4c739a] text-xs font-medium uppercase mb-1">Total Swaps</p>
+<h3 class="text-2xl font-bold">36</h3>
+</div>
+</div>
+<!-- Bio & Interests Section -->
+<section class="bg-white dark:bg-[#1a2634] p-8 rounded-xl shadow-sm border border-[#e7edf3] dark:border-slate-700">
+<h2 class="text-xl font-bold mb-4">About Me</h2>
+<p class="text-[#4c739a] dark:text-slate-400 leading-relaxed mb-6">
+                        Passionate about bridging the gap between design and development. I have over 8 years of experience in Product Design, specializing in complex SaaS systems and design systems. I'm here to share my knowledge of Figma and UI/UX strategy while picking up some new hobbies like digital photography and basic JavaScript.
+                    </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-xs font-medium rounded-full">#DesignThinking</span>
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-xs font-medium rounded-full">#Sustainability</span>
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-xs font-medium rounded-full">#OutdoorPhotography</span>
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-xs font-medium rounded-full">#CoffeeRoasting</span>
+</div>
+</section>
+<!-- Skills Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Can Teach -->
+<section class="bg-white dark:bg-[#1a2634] p-8 rounded-xl shadow-sm border border-[#e7edf3] dark:border-slate-700">
+<div class="flex items-center gap-3 mb-6">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">record_voice_over</span>
+</div>
+<h2 class="text-lg font-bold">Can Teach</h2>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between p-3 rounded-lg border border-[#e7edf3] dark:border-slate-700">
+<div class="flex items-center gap-3">
+<span class="text-sm font-semibold">Figma Advanced</span>
+</div>
+<span class="skill-badge-teach px-2 py-0.5 rounded text-[10px] font-bold uppercase">Expert</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg border border-[#e7edf3] dark:border-slate-700">
+<div class="flex items-center gap-3">
+<span class="text-sm font-semibold">Design Systems</span>
+</div>
+<span class="skill-badge-teach px-2 py-0.5 rounded text-[10px] font-bold uppercase">Expert</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg border border-[#e7edf3] dark:border-slate-700">
+<div class="flex items-center gap-3">
+<span class="text-sm font-semibold">UI/UX Strategy</span>
+</div>
+<span class="skill-badge-teach px-2 py-0.5 rounded text-[10px] font-bold uppercase">Advanced</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg border border-[#e7edf3] dark:border-slate-700">
+<div class="flex items-center gap-3">
+<span class="text-sm font-semibold">Prototyping</span>
+</div>
+<span class="skill-badge-teach px-2 py-0.5 rounded text-[10px] font-bold uppercase">Advanced</span>
+</div>
+</div>
+</section>
+<!-- Wants to Learn -->
+<section class="bg-white dark:bg-[#1a2634] p-8 rounded-xl shadow-sm border border-[#e7edf3] dark:border-slate-700">
+<div class="flex items-center gap-3 mb-6">
+<div class="size-10 rounded-lg bg-green-500/10 flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<h2 class="text-lg font-bold">Wants to Learn</h2>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between p-3 rounded-lg border border-[#e7edf3] dark:border-slate-700">
+<div class="flex items-center gap-3">
+<span class="text-sm font-semibold">JavaScript Basics</span>
+</div>
+<span class="skill-badge-learn px-2 py-0.5 rounded text-[10px] font-bold uppercase">Beginner</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg border border-[#e7edf3] dark:border-slate-700">
+<div class="flex items-center gap-3">
+<span class="text-sm font-semibold">Street Photography</span>
+</div>
+<span class="skill-badge-learn px-2 py-0.5 rounded text-[10px] font-bold uppercase">Beginner</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg border border-[#e7edf3] dark:border-slate-700">
+<div class="flex items-center gap-3">
+<span class="text-sm font-semibold">Tailwind CSS</span>
+</div>
+<span class="skill-badge-learn px-2 py-0.5 rounded text-[10px] font-bold uppercase">Intermed.</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg border border-[#e7edf3] dark:border-slate-700">
+<div class="flex items-center gap-3">
+<span class="text-sm font-semibold">Motion Design</span>
+</div>
+<span class="skill-badge-learn px-2 py-0.5 rounded text-[10px] font-bold uppercase">Intermed.</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Recent Activity/Reviews Preview -->
+<section class="bg-white dark:bg-[#1a2634] p-8 rounded-xl shadow-sm border border-[#e7edf3] dark:border-slate-700">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-xl font-bold">Recent Reviews</h2>
+<a class="text-primary text-sm font-semibold" href="#">See all 24 reviews</a>
+</div>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="size-10 rounded-full bg-cover bg-center shrink-0" data-alt="Reviewer Sarah Chen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDpJP_EtM9srjTzNXDUHyed-Ps-zSNBOLPDdgzdopmABngKBTSH63r2r05w268puMN3k2sY0UdgvCx6F6cTcfLIyyOgWVYl4raW1geNOPhraLiYu6uFYdtzdrW1kBChJ9CpH-4KpPLXDhmGPJS8mqxIvmmdMOWf9kRdB7dZQzIUYF68brr9UBynOmuXHsf3pn927Fa-_shpouRbBMt3GaHSi-0tiOK4oiMQppVVRc4KNa6vFaKoUXJkLUFUO860d5xBWj20UTYS-k0U");'></div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-bold text-sm">Sarah Chen</span>
+<div class="flex text-yellow-500">
+<span class="material-symbols-outlined text-xs fill-yellow-500">star</span>
+<span class="material-symbols-outlined text-xs fill-yellow-500">star</span>
+<span class="material-symbols-outlined text-xs fill-yellow-500">star</span>
+<span class="material-symbols-outlined text-xs fill-yellow-500">star</span>
+<span class="material-symbols-outlined text-xs fill-yellow-500">star</span>
+</div>
+</div>
+<p class="text-sm text-[#4c739a] dark:text-slate-400 italic">"Alex is an incredible Figma mentor! He explained auto-layout concepts that I've been struggling with for months in just one session. Highly recommend him for design systems!"</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="size-10 rounded-full bg-cover bg-center shrink-0" data-alt="Reviewer Marcus Miller" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDYYft9q-TOt5HM4VRUQ2GyGXLG9hTgNtx-x0Lew3yq4fbq-Fcq1hxvUlViW8HDOVK2uw55H4zVUN2LpSWK4mFLB1Nysb1oin3-SMKtPrVgQquwrOLeOVlBOTLVF2ne8I7cwUftt2nc7c68v9pcF0Q1K4OzAwsXDGsC04isdyz8WR0smDXhklL4s1H2Ma9DeDN3on3426tSqBNC_8CS5vCUwkFft9srZTZkj1rKJ09lOHYvXxtvJ2pngZQEHtUPCHnWx3wwM8Awig4R");'></div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-bold text-sm">Marcus Miller</span>
+<div class="flex text-yellow-500">
+<span class="material-symbols-outlined text-xs fill-yellow-500">star</span>
+<span class="material-symbols-outlined text-xs fill-yellow-500">star</span>
+<span class="material-symbols-outlined text-xs fill-yellow-500">star</span>
+<span class="material-symbols-outlined text-xs fill-yellow-500">star</span>
+<span class="material-symbols-outlined text-xs fill-yellow-500">star</span>
+</div>
+</div>
+<p class="text-sm text-[#4c739a] dark:text-slate-400 italic">"Great communicator and very patient. We traded UI feedback for some JavaScript debugging, and it was a perfect swap."</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer Space -->
+<footer class="py-12 text-center text-[#4c739a] text-sm">
+<p>© 2024 SkillSwap Platform. All rights reserved.</p>
+</footer>
+</body></html>
